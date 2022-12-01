@@ -9,11 +9,12 @@ btn.addEventListener('click', () => {
 
 const articlesData = articles
   .map(({ title, date, length, snippet }) => {
+    const formatDate = moment(date).format('MMMM DD, YYYY');
     return `<article class="post">
           <h2>${title}</h2>
           <div class="post-info">
-            <span>${date}</span>
-            <span>${length}</span>
+            <span>${formatDate}</span>
+            <span>${length} min read</span>
           </div>
           <p>
            ${snippet}
